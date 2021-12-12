@@ -1,6 +1,5 @@
 import { css, Global } from "@emotion/react";
 import styled from "@emotion/styled";
-import { DialogContent, DialogOverlay } from "@reach/dialog";
 import { animated, useSpring, useTransition } from "@react-spring/web";
 import darken from "polished/lib/color/darken";
 import React from "react";
@@ -187,7 +186,9 @@ const Content = styled.div`
   bottom: 0;
 `;
 
-const ModalWrapper = styled(animated(DialogContent))`
+const Div = styled.div;
+
+const ModalWrapper = styled(animated(Div))`
   * {
     box-sizing: border-box;
   }
@@ -212,7 +213,7 @@ const ModalWrapper = styled(animated(DialogContent))`
   color: #696969;
 `;
 
-const StyledDialogOverlay = styled(animated(DialogOverlay), {
+const StyledDialogOverlay = styled(animated(Div), {
   shouldForwardProp(prop) {
     return prop !== "darkenOverlay";
   },
